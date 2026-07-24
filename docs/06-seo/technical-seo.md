@@ -20,7 +20,8 @@ Search engines must be able to reach and read your pages.
   out of search. **Double‑check this at launch.**
 - **XML sitemap** (`sitemap.xml`) — a machine‑readable list of your important
   URLs that helps engines discover them. Submit it in the search engine's
-  webmaster tools.
+  webmaster tools — see [Search Console](search-console.md), which also reports
+  whether the sitemap was read and how many of its URLs got indexed.
 - **Internal linking** — pages with no links to them are hard to discover. A
   logical link structure helps crawling and spreads ranking signals.
 
@@ -90,6 +91,15 @@ for content that must be indexed, or ensure your rendering approach is
 crawler‑friendly. See
 [choosing a tech stack](../01-planning-and-strategy/choosing-a-tech-stack.md).
 
+## Verifying it all worked: Search Console
+
+Everything above is something you *do to* your site; **Search Console is how you
+confirm the search engine actually received it** — which pages got indexed, which
+were rejected and why, whether your redirects and canonicals were honored, and
+whether a leftover `noindex` slipped through. Set it up early and check it after
+every launch or migration. See
+[Search Console & webmaster tools](search-console.md).
+
 ## A pre‑launch technical‑SEO checklist
 
 - [ ] No accidental site‑wide `Disallow` in `robots.txt`.
@@ -100,4 +110,5 @@ crawler‑friendly. See
 - [ ] HTTPS enforced site‑wide.
 - [ ] Titles and meta descriptions set (see [on‑page SEO](on-page-seo.md)).
 - [ ] Mobile version has full content and works well.
-- [ ] Analytics/Search Console configured (see [analytics](analytics.md)).
+- [ ] [Search Console](search-console.md) verified, sitemap submitted, alerts
+      on; analytics configured with consent handling (see [analytics](analytics.md)).

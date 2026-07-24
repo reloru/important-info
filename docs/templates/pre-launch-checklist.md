@@ -46,7 +46,8 @@ relevant guidance.
 - [ ] **No accidental `Disallow: /`** in robots.txt (critical!).
 - [ ] 301 redirects in place for any old/changed URLs.
 - [ ] Canonical tags and single preferred domain set.
-- [ ] Analytics / Search Console configured (with consent handling).
+- [ ] [Search Console](../06-seo/search-console.md) verified, sitemap submitted,
+      alerts enabled; analytics configured (with consent handling).
   See [technical SEO](../06-seo/technical-seo.md).
 
 ## Security 🔒

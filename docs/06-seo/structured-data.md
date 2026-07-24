@@ -43,7 +43,11 @@ often lead to more clicks.
 > ✅ **Do:**
 > - Mark up content that is **actually on the page** and visible to users.
 > - Use the most specific applicable type.
-> - Validate your markup with a structured‑data testing/validation tool.
+> - **Validate your markup** with the **Rich Results Test** (checks Google
+>   rich‑result eligibility) and/or the **Schema.org Validator** (checks the
+>   markup against the vocabulary, engine‑agnostic), then monitor the
+>   **Enhancements** reports in [Search Console](search-console.md) for
+>   errors on your live pages.
 > - Keep it accurate and in sync with the visible content.
 
 > ❌ **Don't:**

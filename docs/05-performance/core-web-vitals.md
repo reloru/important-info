@@ -54,7 +54,12 @@ what's really happening.
 
 ## Tools
 
-- **PageSpeed Insights** — field + lab data for a URL.
+- **PageSpeed Insights** — field + lab data for a single URL, with specific
+  suggestions. The quickest way to diagnose one page.
+- **Search Console's Core Web Vitals report** — site‑wide **field** data
+  grouped Good / Needs improvement / Poor; the authoritative view of what real
+  users experience (and what Google's page‑experience signals use). See
+  [Search Console](../06-seo/search-console.md).
 - **Lighthouse** (Chrome DevTools) — lab audits, including a performance score.
 - **Chrome DevTools Performance panel** — deep diagnosis of main‑thread work.
 - **WebPageTest** — detailed, configurable lab testing.

@@ -22,8 +22,11 @@ Focus on metrics tied to your goals, not vanity numbers:
 
 ## Tools
 
-- **Search Console / webmaster tools** — how you appear in search; index
-  coverage; queries. Essential and low‑privacy‑impact.
+- **[Search Console & webmaster tools](search-console.md)** — the search
+  engine's own view of your site: how you appear in search, index coverage, and
+  queries. Essential, first‑party, and low‑privacy‑impact. It answers *"what does
+  the search engine think of my site?"* — a different question from the
+  user‑behavior analytics below.
 - **Web analytics platforms** — general‑purpose analytics (page views, journeys,
   conversions).
 - **Privacy‑friendly analytics** — tools designed to avoid personal data and

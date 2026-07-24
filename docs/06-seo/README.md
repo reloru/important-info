@@ -24,6 +24,9 @@ being genuinely useful.
 - **[On‑page SEO](on-page-seo.md)** — content, titles, headings, metadata, links.
 - **[Structured data](structured-data.md)** — helping search engines understand
   your content with schema markup.
+- **[Search Console & webmaster tools](search-console.md)** — the search
+  engine's own view of your site: indexing, queries, errors, and the free
+  validation tools around it.
 - **[Analytics](analytics.md)** — measuring what's working (and doing it
   lawfully).
 

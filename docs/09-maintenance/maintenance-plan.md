@@ -46,6 +46,9 @@ See [roles & responsibilities](../00-getting-started/roles-and-responsibilities.
       [budget](../05-performance/performance-budgets.md); check Core Web Vitals.
 - [ ] Check for broken links and 404s.
 - [ ] Review security alerts and access (who still needs access?).
+- [ ] Review [Search Console](../06-seo/search-console.md) — the Performance
+      report for traffic changes and the Pages report for new indexing errors,
+      manual actions, or security issues.
 - [ ] Review analytics for issues and opportunities (see
       [analytics](../06-seo/analytics.md)).
 
