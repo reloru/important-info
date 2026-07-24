@@ -43,7 +43,7 @@ for more, and the [glossary](docs/00-getting-started/glossary.md) for terms.
 | 03 | [Development Best Practices](docs/03-development-best-practices/README.md) | Standards, version control, semantic HTML, testing, code review, docs |
 | 04 | [Accessibility](docs/04-accessibility/README.md) | WCAG, ARIA, checklists, testing — and the law behind it |
 | 05 | [Performance](docs/05-performance/README.md) | Core Web Vitals, asset optimization, caching & CDNs, budgets |
-| 06 | [SEO](docs/06-seo/README.md) | Technical & on‑page SEO, structured data, analytics |
+| 06 | [SEO](docs/06-seo/README.md) | Technical & on‑page SEO, structured data, Search Console & webmaster tools, analytics |
 | 07 | [Security](docs/07-security/README.md) | OWASP Top 10, HTTPS/TLS, auth, secrets, headers |
 | 08 | [Deployment & DevOps](docs/08-deployment-and-devops/README.md) | CI/CD, environments, infrastructure, DNS/SSL |
 | 09 | [Maintenance & Operations](docs/09-maintenance/README.md) | Maintenance plans, dependencies, backups, monitoring, incident response |
