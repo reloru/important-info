@@ -1,0 +1,19 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Static-site build output (if a generator is added later)
+_site/
+.site/
+public/
+dist/
+build/
+node_modules/
+
+# Local env
+.env
+.env.local
