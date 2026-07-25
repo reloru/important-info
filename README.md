@@ -48,7 +48,12 @@ for more, and the [glossary](docs/00-getting-started/glossary.md) for terms.
 | 08 | [Deployment & DevOps](docs/08-deployment-and-devops/README.md) | CI/CD, environments, infrastructure, DNS/SSL |
 | 09 | [Maintenance & Operations](docs/09-maintenance/README.md) | Maintenance plans, dependencies, backups, monitoring, incident response |
 | 10 | [Legal & Compliance](docs/10-legal-and-compliance/README.md) | Privacy, GDPR, CCPA/CPRA, cookies, ToS, accessibility law, IP, e‑commerce, email law |
+| 11 | [Payments](docs/11-payments/README.md) | How online payments work, choosing a provider, PCI, Stripe (integration, webhooks, subscriptions, disputes, operations) |
 | — | [Templates & Checklists](docs/templates/README.md) | Ready‑to‑adapt policies, checklists, and plans |
+
+> Sections 00–10 follow the website life cycle in order; **11 · Payments** is a
+> **feature deep‑dive** (a capability you add, not a life‑cycle phase) and leans
+> more technical by necessity.
 
 ---
 
@@ -93,6 +98,7 @@ they thread through every phase. This knowledge base flags where.
 │   ├── 08-deployment-and-devops/
 │   ├── 09-maintenance/
 │   ├── 10-legal-and-compliance/
+│   ├── 11-payments/
 │   └── templates/
 ```
 
