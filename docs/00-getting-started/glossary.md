@@ -435,7 +435,7 @@ Terms are grouped by area. Use your browser's find (Ctrl/Cmd‑F) to jump to one
 - **PCI DSS (Payment Card Industry Data Security Standard)** — Security
   requirements for handling payment‑card data. *Why it matters:* using a reputable
   processor so you never touch raw card data dramatically shrinks your obligations.
-  See [e‑commerce law](../10-legal-and-compliance/ecommerce-law.md).
+  See [PCI compliance](../11-payments/pci-compliance.md).
 
 ## Development practices
 
@@ -631,6 +631,69 @@ Terms are grouped by area. Use your browser's find (Ctrl/Cmd‑F) to jump to one
   (US, based on sales thresholds per state) or **VAT** (EU, often by the customer's
   country) on online sales. *Why it matters:* getting tax wrong creates real
   liability; use tax tooling and professional advice.
+
+## Payments
+
+- **Payment Service Provider (PSP) / payment processor** — A service (e.g.,
+  Stripe, PayPal) that lets you accept payments, bundling the gateway,
+  processing, and bank relationship. *Why it matters:* a modern PSP lets you start
+  accepting cards in minutes without contracting a gateway, processor, and
+  merchant account separately. See [Payments](../11-payments/README.md).
+- **Payment gateway** — The component that securely captures payment details and
+  connects them to processing. *Why it matters:* it's the piece that keeps card
+  data off your servers (via hosted fields); modern PSPs include it.
+- **Acquirer / issuer** — The **acquirer** (acquiring bank) receives the
+  merchant's funds; the **issuer** (issuing bank) issued the customer's card and
+  approves or declines the payment. *Why it matters:* they're the two banks whose
+  back‑and‑forth authorizes and settles every card payment.
+- **Merchant of record (MoR)** — The entity that is the **legal seller** of a
+  transaction and owns tax and compliance for it. With a processor like Stripe,
+  **you** are the MoR (you handle tax); services like Paddle or Lemon Squeezy
+  **become** the MoR and handle sales tax/VAT for you at a higher fee. *Why it
+  matters:* it's the key decision for global digital‑goods/SaaS sellers who'd
+  rather not register for tax worldwide. See
+  [choosing a payment provider](../11-payments/choosing-a-payment-provider.md).
+- **Authorization / capture / settlement / payout** — The four stages of a card
+  payment: **authorization** (the issuer approves and holds funds), **capture**
+  (you instruct collection), **settlement** (banks/networks actually move the
+  money over days), **payout** (the PSP transfers your balance, minus fees, to
+  your bank). *Why it matters:* they're distinct and asynchronous — "authorized"
+  is not "paid," and payouts lag sales. See
+  [how online payments work](../11-payments/how-online-payments-work.md).
+- **PaymentIntent** — Stripe's object representing a payment and tracking its
+  lifecycle (including authentication like 3D Secure). *Why it matters:* it's the
+  modern foundation of a Stripe payment and why SCA "just works." See
+  [integrating Stripe](../11-payments/stripe-integration.md).
+- **Tokenization** — Replacing sensitive card data with a non‑sensitive **token**
+  that references it. *Why it matters:* you store and reuse the token, never the
+  card number — the basis of PCI‑light integrations and saved cards.
+- **Idempotency key** — A unique value attached to a request so that retrying it
+  performs the action only once. *Why it matters:* it makes payment creation safe
+  to retry after timeouts/double‑clicks so customers aren't charged twice; webhook
+  handling needs the same idempotency. See
+  [integrating Stripe](../11-payments/stripe-integration.md).
+- **Webhook** — An HTTP callback a service sends your server when an event occurs.
+  *Why it matters:* for payments, webhooks are the **source of truth** — you
+  confirm success and fulfill orders from verified webhooks, not from the browser.
+  See [webhooks & fulfillment](../11-payments/webhooks-and-fulfillment.md).
+- **3D Secure (3DS) / Strong Customer Authentication (SCA)** — An extra
+  authentication step (a bank prompt/code/biometrics) on a card payment. **SCA**
+  (under the EU/UK **PSD2** law) legally requires it for many online payments.
+  *Why it matters:* it reduces fraud and shifts liability, and is mandatory for
+  European customers — Stripe's PaymentIntents flows handle it automatically. See
+  [disputes, refunds & fraud](../11-payments/disputes-refunds-and-fraud.md).
+- **Chargeback / dispute** — When a cardholder asks their bank to reverse a charge.
+  *Why it matters:* it costs you the sale plus a (usually non‑refundable) fee, and
+  a high dispute ratio can threaten your ability to accept cards at all.
+- **Dunning** — The process of recovering failed recurring payments (retries +
+  customer prompts to update their card). *Why it matters:* failed‑payment
+  ("involuntary") churn is often larger than voluntary churn; good dunning
+  directly protects subscription revenue. See
+  [subscriptions & billing](../11-payments/subscriptions-and-billing.md).
+- **Reconciliation** — Confirming your records, the PSP's records, and your bank
+  all agree on what was paid, refunded, and paid out. *Why it matters:* it catches
+  missed webhooks, bugs, and fraud — non‑negotiable for anything handling money.
+  See [going live & operations](../11-payments/going-live-and-operations.md).
 
 ---
 

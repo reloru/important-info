@@ -63,6 +63,11 @@ The purchase step is heavily scrutinized:
 > yourself unless you truly must and are properly certified. See
 > [Security](../07-security/README.md).
 
+For the full picture — how online payments work, choosing a provider (including
+whether a **merchant of record** should own tax for you), integrating Stripe, PCI
+scope, Strong Customer Authentication, disputes, and operations — see the
+[**Payments** section](../11-payments/README.md).
+
 ## Tax
 
 > ⚖️ **Sales tax / VAT / GST** on online sales is complex and location‑dependent:
@@ -74,7 +79,10 @@ The purchase step is heavily scrutinized:
 > - Thresholds, rates, and registration duties vary widely.
 >
 > This is an area to get **accounting/tax advice** and to use tax‑calculation
-> tooling — getting it wrong creates real liability.
+> tooling — getting it wrong creates real liability. Tools like **Stripe Tax**
+> calculate and collect tax, but as a processor you still register and remit; a
+> **merchant of record** can take over tax entirely for a higher fee. See
+> [choosing a payment provider](../11-payments/choosing-a-payment-provider.md).
 
 ## Digital goods and subscriptions
 

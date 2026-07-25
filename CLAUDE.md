@@ -22,6 +22,12 @@ life-cycle order) or as a reference (jump to a topic).
   order (Getting Started → Planning → Design → Dev → Accessibility →
   Performance → SEO → Security → Deployment → Maintenance → Legal), plus
   `docs/templates/`.
+- **`docs/11-payments/`** sits *outside* the life-cycle numbering as a **feature
+  deep-dive** (a capability, not a phase). It's OK to add more such feature
+  sections (12+, e.g. email/notifications, i18n, search, auth-as-a-feature) the
+  same way rather than forcing everything into the life-cycle metaphor. Payments
+  leans more technical than the rest of the KB on purpose — that's appropriate
+  for the topic; still keep architecture/best-practices over line-by-line code.
 - **Every section folder has a `README.md` index** that links its pages. When
   you add a page, link it from that README (and, if broadly important, from the
   root `README.md` section table).
@@ -159,6 +165,21 @@ A link-check GitHub Action would be a good future addition (see backlog).
 
 ## Log of substantive work (append newest at top)
 
+- **Payments section (new `docs/11-payments/`, focus: Stripe):** added a 10-file
+  feature deep-dive — how online payments work, choosing a provider
+  (processor vs. merchant-of-record), PCI/SAQ A, Stripe overview, integration
+  (Checkout/Payment Element/Payment Links, PaymentIntent lifecycle, idempotency,
+  "never trust the client"), webhooks & fulfillment (source of truth, signature
+  verify, idempotent handling), subscriptions & billing (dunning, portal,
+  auto-renew law), disputes/refunds/fraud (Radar, 3DS/SCA), and going-live/ops
+  (Stripe CLI, payouts, reconciliation, tax). Verified a few volatile facts via
+  web (Stripe now recommends **Checkout Sessions API + Payment Element** for most;
+  standard US pricing commonly ~2.9%+30¢, hedged; SAQ A via hosted fields; MoR
+  alternatives Paddle/Lemon Squeezy). Wired into e-commerce-law (2 spots), root
+  README table+structure, and glossary (new Payments group). **Volatile Stripe
+  specifics are deliberately hedged and point to docs.stripe.com as source of
+  truth** — keep that stance; re-verify pricing/product names if you touch them.
+- **CLAUDE.md added (PR #2, merged):** this file.
 - **KB build-out + refinement (PR #1, merged):** created the full 11-section KB
   (79 docs) + templates; then a refinement pass adding the Search Console /
   webmaster-tools page and rewriting the glossary into a comprehensive
