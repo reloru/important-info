@@ -366,6 +366,10 @@ Terms are grouped by area. Use your browser's find (Ctrl/Cmd‑F) to jump to one
   ongoing maintenance task. See [content updates](../09-maintenance/content-updates.md).
 - **Backlink** — A link from another site to yours. *Why it matters:* genuine,
   earned links are a ranking signal; buying spammy ones invites penalties.
+- **`hreflang`** — Annotations that tell search engines how the language/region
+  versions of a page relate. *Why it matters:* on multilingual/multi‑region sites
+  they serve the right version to each user and stop the versions competing as
+  duplicates. See [technical SEO](../06-seo/technical-seo.md).
 
 ## Security
 
@@ -396,6 +400,16 @@ Terms are grouped by area. Use your browser's find (Ctrl/Cmd‑F) to jump to one
 - **CSRF (Cross‑Site Request Forgery)** — Tricking a logged‑in user's browser into
   making an unwanted request. *Why it matters:* it's defended with anti‑CSRF tokens
   and `SameSite` cookies.
+- **Rate limiting** — Capping how many requests/actions a client can make in a
+  time window. *Why it matters:* it blunts brute‑force logins, form spam, API
+  abuse, and payment card‑testing — a cheap, high‑value control that's easy to
+  forget. See [forms & input handling](../03-development-best-practices/forms-and-input-handling.md).
+- **Form spam protection (honeypot / CAPTCHA)** — Techniques to stop bots
+  submitting public forms: a **honeypot** is a hidden field real users leave
+  blank; a **CAPTCHA** is a human‑verification challenge. *Why it matters:* every
+  public form is attacked constantly; invisible defenses (honeypot, time trap,
+  rate limiting) stop most bots without the friction/accessibility cost of a
+  CAPTCHA. See [forms & input handling](../03-development-best-practices/forms-and-input-handling.md).
 - **MFA (Multi‑Factor Authentication)** — Requiring a second factor (an app code, a
   hardware key) beyond a password. *Why it matters:* it makes stolen passwords far
   less useful and is one of the highest‑value protections — especially for admins.

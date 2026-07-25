@@ -72,6 +72,24 @@ Search engines predominantly index the **mobile** version of your site. If your
 mobile experience is degraded or hides content, your rankings suffer. Build
 responsively. See [responsive design](../02-design-and-ux/responsive-design.md).
 
+## International sites (`hreflang`)
+
+If you serve the **same content in multiple languages or regions**, tell search
+engines how the versions relate with **`hreflang`** annotations. Each localized
+page declares itself and its equivalents (e.g., `en-us`, `en-gb`, `fr`), so the
+engine serves the right version to each user and the versions don't compete with
+or get flagged as duplicating each other.
+
+- Keep a consistent URL strategy per locale (subdirectory `/fr/`, subdomain, or
+  country‑code domain) and set correct `lang` attributes on the page.
+- `hreflang` mappings must be **reciprocal** (each version points to the others,
+  including itself) or engines may ignore them.
+- This is one slice of the broader topic of **internationalization/localization**
+  (translation, formatting, right‑to‑left layouts, legal differences), which
+  spans development, UX, and law — not just SEO.
+
+*(Skip this section entirely if your site is single‑language/single‑region.)*
+
 ## Core Web Vitals
 
 Page experience — including [Core Web Vitals](../05-performance/core-web-vitals.md)

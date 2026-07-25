@@ -23,6 +23,8 @@ into things you can actually *use*.
 specific moment):
 - **[Security hardening checklist](security-hardening-checklist.md)** — a
   security‑specific audit for launch **and** periodic review.
+- **[SEO checklist](seo-checklist.md)** — crawl/index, on‑page, structured data,
+  Search Console, and page experience; for launch and periodic SEO audits.
 - **[Privacy & compliance checklist](privacy-compliance-checklist.md)** — the
   data‑protection obligations most sites have; for build time and annual review.
 - **[Payments go‑live checklist](payments-go-live-checklist.md)** — before you

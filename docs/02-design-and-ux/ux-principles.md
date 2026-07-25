@@ -70,6 +70,10 @@ Forms are where users most often struggle and abandon:
 - Indicate required vs. optional clearly.
 - Support autofill and password managers.
 
+This is the *usability* side of forms; the *handling* side — server‑side
+validation, spam/abuse protection, uploads, and where submissions go — is covered
+in [forms & input handling](../03-development-best-practices/forms-and-input-handling.md).
+
 ## Dark patterns: don't
 
 **Dark patterns** are interface tricks that manipulate users into doing things

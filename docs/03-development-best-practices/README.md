@@ -20,6 +20,8 @@ and safely modify.
   commits, and collaboration.
 - **[Semantic HTML](semantic-html.md)** — the foundation of accessible,
   robust, SEO‑friendly pages.
+- **[Forms & input handling](forms-and-input-handling.md)** — validating,
+  securing, and de‑spamming everything users submit.
 - **[Testing](testing.md)** — the kinds of testing a website needs and when.
 - **[Code review](code-review.md)** — catching problems and sharing knowledge.
 - **[Documentation](documentation.md)** — writing down what future maintainers
