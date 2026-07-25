@@ -72,4 +72,7 @@ Decide, explicitly, before launch:
 - Who monitors uptime and responds to incidents?
 - Who reviews legal compliance as laws change?
 
-→ See [Maintenance & Operations](../09-maintenance/README.md).
+→ See [Maintenance & Operations](../09-maintenance/README.md). When a site
+changes hands, work through the
+[project handover & ownership checklist](../templates/project-handover-checklist.md)
+so none of these questions is left unanswered.

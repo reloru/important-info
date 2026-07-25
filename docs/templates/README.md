@@ -13,10 +13,24 @@ into things you can actually *use*.
 
 ## Checklists (use freely)
 
+**Broad gates:**
 - **[Pre‑launch checklist](pre-launch-checklist.md)** — the gate before you go
   live, covering every discipline.
 - **[Maintenance checklist](maintenance-checklist.md)** — the recurring
   weekly/monthly/quarterly/annual cadence.
+
+**Deeper, single‑domain checklists** (run alongside the broad ones, for their
+specific moment):
+- **[Security hardening checklist](security-hardening-checklist.md)** — a
+  security‑specific audit for launch **and** periodic review.
+- **[Privacy & compliance checklist](privacy-compliance-checklist.md)** — the
+  data‑protection obligations most sites have; for build time and annual review.
+- **[Payments go‑live checklist](payments-go-live-checklist.md)** — before you
+  take real money (Stripe‑oriented).
+- **[Project handover & ownership checklist](project-handover-checklist.md)** —
+  for handing a site over without leaving a "who owns/maintains it?" gap.
+
+**Other templates:**
 - **[Incident report template](incident-report-template.md)** — structure for
   documenting and learning from incidents.
 - **[Accessibility statement template](accessibility-statement-template.md)** —

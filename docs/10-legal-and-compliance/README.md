@@ -75,5 +75,8 @@ Most sites, even small ones, need to consider:
    review in the [maintenance plan](../09-maintenance/maintenance-plan.md).
 6. **Get professional advice** where the stakes are real.
 
+For a copy‑ready, actionable version of these steps, use the
+[privacy & compliance checklist](../templates/privacy-compliance-checklist.md).
+
 Compliance done early is cheap and routine. Compliance forced late — under a
 complaint or breach — is expensive and stressful.

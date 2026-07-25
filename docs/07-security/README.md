@@ -47,6 +47,10 @@ If you do nothing else, do these:
    [backups](../09-maintenance/backups-and-disaster-recovery.md).
 7. **Apply security headers.** See [security headers](security-headers.md).
 
+For a copy‑ready audit of all of this and more — to run before launch and
+periodically after — use the
+[security hardening checklist](../templates/security-hardening-checklist.md).
+
 ## Security and the law are intertwined
 
 > ⚖️ **Legal note:** Data‑protection laws require you to protect personal data

@@ -5,6 +5,12 @@ and check items off. Adapt to your project's scale — a brochure site skips som
 of this, an e‑commerce app needs all of it and more. Each area links to the
 relevant guidance.
 
+> This is the **broad** gate. For deeper, single‑domain audits, pair it with the
+> [security hardening](security-hardening-checklist.md),
+> [privacy & compliance](privacy-compliance-checklist.md),
+> [payments go‑live](payments-go-live-checklist.md), and
+> [handover & ownership](project-handover-checklist.md) checklists as they apply.
+
 ## Content & functionality
 - [ ] All pages present; no placeholder/"lorem ipsum" content left.
 - [ ] Spelling and grammar reviewed.
