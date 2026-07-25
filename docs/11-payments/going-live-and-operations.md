@@ -43,6 +43,10 @@ requirement that payment providers are legally obligated to perform).
 
 ## Go‑live checklist
 
+*(A fuller, copy‑ready version is the
+[payments go‑live checklist template](../templates/payments-go-live-checklist.md) —
+paste it into a ticket.)*
+
 - [ ] Business **activated/verified**; payout bank account confirmed.
 - [ ] **Live API keys** in production config; **test keys** in dev/staging —
       separated per [environment](../08-deployment-and-devops/environments.md).

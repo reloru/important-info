@@ -165,6 +165,14 @@ A link-check GitHub Action would be a good future addition (see backlog).
 
 ## Log of substantive work (append newest at top)
 
+- **Four checklist templates added** (`docs/templates/`): payments go-live,
+  security hardening, privacy & compliance, and project handover & ownership.
+  Each is a copy-ready, single-domain gate distinct from the broad pre-launch
+  checklist; cross-linked from templates README, the pre-launch checklist, and
+  their source sections (payments going-live, security README, legal README,
+  roles/handover). Pattern for future checklists: keep them non-redundant with
+  pre-launch (deeper/for a specific moment), link to source sections, note *when*
+  to run them.
 - **Payments section (new `docs/11-payments/`, focus: Stripe):** added a 10-file
   feature deep-dive — how online payments work, choosing a provider
   (processor vs. merchant-of-record), PCI/SAQ A, Stripe overview, integration
