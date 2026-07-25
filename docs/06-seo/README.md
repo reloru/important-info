@@ -55,3 +55,9 @@ You'll notice SEO advice echoes other sections — that's not a coincidence:
 
 There are no guaranteed rankings and no legitimate shortcuts. Anyone promising
 "#1 on Google, guaranteed" is selling snake oil.
+
+## Checklist
+
+For a copy‑ready gate covering crawl/index, on‑page, structured data, Search
+Console, and page experience — at launch and for periodic audits — use the
+[SEO checklist](../templates/seo-checklist.md).

@@ -7,6 +7,7 @@ relevant guidance.
 
 > This is the **broad** gate. For deeper, single‑domain audits, pair it with the
 > [security hardening](security-hardening-checklist.md),
+> [SEO](seo-checklist.md),
 > [privacy & compliance](privacy-compliance-checklist.md),
 > [payments go‑live](payments-go-live-checklist.md), and
 > [handover & ownership](project-handover-checklist.md) checklists as they apply.

@@ -165,6 +165,19 @@ A link-check GitHub Action would be a good future addition (see backlog).
 
 ## Log of substantive work (append newest at top)
 
+- **Pre-publish gap audit + SEO checklist + forms page.** Audited the KB for
+  critical holes before wiring up an SSG. Finding: **no critical omission** — the
+  core life-cycle/security/privacy/accessibility/performance/SEO/payments/legal is
+  solid. Filled two real gaps: (1) `docs/templates/seo-checklist.md` (deeper SEO
+  gate; overlap with pre-launch SEO block is intentional/OK per user); (2) new
+  `docs/03-development-best-practices/forms-and-input-handling.md` covering
+  server-side validation, spam/abuse (honeypot/time-trap/rate-limit/CAPTCHA),
+  uploads, deliverability, privacy — the form-spam/rate-limit gap. Also added a
+  brief `hreflang`/international-SEO note to technical-seo. Glossary: added
+  hreflang, rate limiting, form spam protection. **Still non-critical but open as
+  feature-section candidates if the user wants them: full i18n/localization
+  (12+), transactional email/deliverability, on-site search.** KB is otherwise
+  publish-ready.
 - **Four checklist templates added** (`docs/templates/`): payments go-live,
   security hardening, privacy & compliance, and project handover & ownership.
   Each is a copy-ready, single-domain gate distinct from the broad pre-launch

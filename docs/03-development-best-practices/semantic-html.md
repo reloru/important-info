@@ -64,6 +64,10 @@ Use headings to convey hierarchy, not size:
 - Group related fields with `<fieldset>` and `<legend>`.
 - Mark required fields with the `required` attribute *and* a visible indicator.
 
+Native form markup and its built‑in validation are for structure and UX — the
+security and spam handling of what gets submitted is covered in
+[forms & input handling](forms-and-input-handling.md).
+
 ## When native isn't enough: ARIA (carefully)
 
 Sometimes you build components HTML doesn't natively provide (a custom combobox,
