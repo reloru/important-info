@@ -23,6 +23,42 @@ If you handle passwords yourself:
 - **Check against known breached passwords** where feasible, and don't force
   frequent arbitrary rotation (modern guidance discourages it).
 
+### Passkeys: the direction of travel
+A **passkey** is a public‑key credential stored on the user's device or in their
+password manager, created and used through the **Web Authentication API
+(WebAuthn)** — a W3C Recommendation. The user authenticates locally (biometric,
+device PIN), and the device proves possession of a private key to your server.
+Nothing reusable is transmitted.
+
+Why this matters more than a better password policy:
+
+- **There is no shared secret to steal.** Your server stores only a public key,
+  so a database breach yields nothing an attacker can replay.
+- **Phishing‑resistant by construction.** The credential is **scoped to your
+  origin** and simply won't produce a signature for a look‑alike domain. This is
+  the property passwords and one‑time codes cannot provide — a user can be
+  tricked into typing those into the wrong site; they cannot be tricked into
+  this.
+- **No credential stuffing**, because there's nothing reused across sites.
+
+In the specification's terms, a passkey is a *client‑side discoverable
+credential*: discoverable means the authenticator can offer it without your
+server first identifying the user, which is what enables a sign‑in with no
+username step at all.
+
+> ✅ **Do:** Offer passkeys for new builds, and let existing users add one
+> alongside their password. Support **multiple credentials per account** —
+> people have more than one device, and a user with exactly one passkey and no
+> recovery path is a lockout waiting to happen.
+> ❌ **Don't:** Treat a passkey as a second factor bolted onto a password. It
+> replaces the password; adding a second prompt for both gives users the cost of
+> both and the benefit of neither.
+
+> ⚠️ **Account recovery becomes the weak point.** Once the password is gone, the
+> attacker's cheapest route is your reset flow — so an emailed "recover my
+> account" link that bypasses the passkey quietly re‑introduces every phishing
+> risk you just removed. Design recovery as deliberately as you design sign‑in.
+
 ### Multi‑factor authentication (MFA)
 Requiring a second factor (an authenticator app, a hardware key, a code) makes
 stolen passwords far less useful.
@@ -97,7 +133,18 @@ Admin accounts and dashboards are prime targets:
 
 ## Summary
 
-Authenticate strongly (good password hashing, MFA, protected flows), authorize
-strictly (server‑side, deny‑by‑default, ownership checks, least privilege), and
-treat admin access as high‑risk. When in doubt, lean on well‑tested libraries and
-providers rather than inventing your own.
+Authenticate strongly (passkeys where you can, good password hashing and MFA
+where you can't, protected flows either way), authorize strictly (server‑side,
+deny‑by‑default, ownership checks, least privilege), and treat admin access as
+high‑risk. When in doubt, lean on well‑tested libraries and providers rather than
+inventing your own.
+
+## Primary sources
+
+- [Web Authentication: An API for accessing Public Key Credentials, Level 3](https://www.w3.org/TR/webauthn-3/)
+  — the WebAuthn specification (W3C Recommendation, 25 August 2026), including
+  the definition of a discoverable credential / passkey.
+- [MDN — Web Authentication API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
+  — the practical implementation guide.
+- [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) — current
+  guidance on password storage, session management, and authentication flows.

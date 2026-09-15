@@ -74,6 +74,10 @@ usage before embedding.
 > [domains & hosting](../01-planning-and-strategy/domains-and-hosting.md). Don't
 > use others' logos/marks in a way that implies endorsement or causes confusion.
 
+> ⚖️ The mirror of this question is **your** content being used to train
+> someone else's model. The technical controls, and their limits, are in
+> [AI crawlers & content controls](../06-seo/ai-crawlers-and-content-controls.md).
+
 ## AI‑generated content: proceed carefully
 
 > ⚖️ AI‑generated images, text, and code raise **unsettled** legal questions:

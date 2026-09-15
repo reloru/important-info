@@ -27,6 +27,8 @@ being genuinely useful.
 - **[Search Console & webmaster tools](search-console.md)** — the search
   engine's own view of your site: indexing, queries, errors, and the free
   validation tools around it.
+- **[AI crawlers & content controls](ai-crawlers-and-content-controls.md)** —
+  deciding and signalling how AI systems may use your content.
 - **[Analytics](analytics.md)** — measuring what's working (and doing it
   lawfully).
 

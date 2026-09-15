@@ -25,6 +25,10 @@ is not a defense.
 - **[Privacy policy](privacy-policy.md)** — the document nearly every site needs.
 - **[GDPR](gdpr.md)** — the EU/UK data‑protection regime (broad reach, real
   fines).
+- **[Data retention](data-retention.md)** — how long to keep personal data, and
+  making deletion actually happen.
+- **[Vendors & subprocessors](vendors-and-subprocessors.md)** — the contracts and
+  the chain of third parties holding your users' data.
 - **[CCPA / CPRA](ccpa-cpra.md)** — California's privacy laws (and the wider US
   state‑law wave).
 - **[Cookies & tracking](cookies-and-tracking.md)** — consent, banners, and doing

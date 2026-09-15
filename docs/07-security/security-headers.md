@@ -55,6 +55,55 @@ Referrer-Policy: strict-origin-when-cross-origin
 Lets you disable powerful browser features (camera, microphone, geolocation,
 etc.) you don't use, reducing the attack surface and protecting users.
 
+### Access-Control-Allow-Origin (CORS)
+The odd one out. Every other header here **adds** a restriction; the CORS headers
+**relax** one. Browsers block cross‑origin reads by default (the same‑origin
+policy), and **Cross‑Origin Resource Sharing (CORS)** is how a server opts
+specific other origins back in.
+
+That inversion is why CORS is the header most often turned into a vulnerability:
+misconfiguring the others weakens a defence, while misconfiguring this one
+*grants access*.
+
+```
+Access-Control-Allow-Origin: https://app.example.com
+Vary: Origin
+```
+
+Three rules worth internalising:
+
+- **`*` and credentials cannot combine.** If a request carries cookies or HTTP
+  auth, the wildcard is invalid — browsers reject the response outright. Name the
+  exact origin and send `Access-Control-Allow-Credentials: true`.
+- **Never reflect the `Origin` header blindly.** Echoing back whatever origin
+  asked is functionally equivalent to allowing every site on the internet to read
+  authenticated responses from your API. Validate against an **allow‑list** and
+  echo only a match — and send `Vary: Origin` so caches don't serve one origin's
+  response to another.
+- **Preflights exist for a reason.** For anything beyond a simple request — a
+  method other than GET/HEAD/POST, a custom header, an unusual `Content-Type` —
+  the browser first sends an `OPTIONS` **preflight** and only proceeds if the
+  server approves. `Access-Control-Max-Age` lets the browser cache that approval.
+
+> ⚠️ CORS protects **browsers**, not servers. It governs what a browser will let
+> a page *read* cross‑origin; it is not access control. A direct request from
+> `curl` or a server ignores it entirely. Authorization still has to be enforced
+> server‑side on every request — see
+> [authentication & authorization](authentication-and-authorization.md).
+
+> ✅ **Do:** Default to no CORS headers at all, and add a narrow allow‑list only
+> where a real cross‑origin client needs one.
+> ❌ **Don't:** Reach for `Access-Control-Allow-Origin: *` to make a console
+> error go away. That error is usually telling you something true.
+
+### A related control: Subresource Integrity
+Headers govern what the browser *may* load. **Subresource Integrity (SRI)**
+governs whether what arrived is what you expected — a hash in an `integrity`
+attribute that the browser verifies before running a third‑party script or
+stylesheet. It pairs with CORS (SRI requires it) and with CSP, and it's covered
+with the rest of the third‑party problem in
+[third‑party scripts](../03-development-best-practices/third-party-scripts.md).
+
 ## Cookie security attributes
 
 Not headers per se, but set on cookies and just as important:

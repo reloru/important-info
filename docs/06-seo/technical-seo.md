@@ -9,6 +9,11 @@ migration) can be severe.
 
 Search engines must be able to reach and read your pages.
 
+> 💡 AI crawlers are controlled through the same file but need their own
+> decisions — training and search agents are separate, and `Google-Extended`
+> isn't a crawler at all. See
+> [AI crawlers & content controls](ai-crawlers-and-content-controls.md).
+
 - **`robots.txt`** — tells crawlers which paths they may or may not crawl. Useful
   for keeping crawlers out of admin or duplicate areas.
   > ❌ **Don't** use `robots.txt` to hide sensitive content — it's public and

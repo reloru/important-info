@@ -31,10 +31,11 @@ credentials, and predictable mistakes.**
 - **[Security headers](security-headers.md)** — browser‑level protections you
   get almost for free.
 
-Forms are where most user input enters your site, so the practical companion to
-this section lives in the development chapter:
+Two practical companions to this section live in the development chapter:
 **[forms & input handling](../03-development-best-practices/forms-and-input-handling.md)**
-— server‑side validation, spam and abuse controls, file uploads, and rate limiting.
+— server‑side validation, spam and abuse controls, file uploads, and rate limiting
+— and **[third‑party scripts](../03-development-best-practices/third-party-scripts.md)**
+— inventorying and constraining the vendor code running on your pages.
 
 ## The highest‑value basics
 

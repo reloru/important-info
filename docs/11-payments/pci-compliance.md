@@ -133,7 +133,8 @@ security entirely:
       integrity against injected scripts — and you can **show** it, since this is
       now an SAQ A **eligibility** question, not just good practice.
 - [ ] You have an **inventory of scripts** on the payment page and a way to detect
-      unauthorized changes to them (PCI DSS 6.4.3 / 11.6.1).
+      unauthorized changes to them (PCI DSS 6.4.3 / 11.6.1). See
+      [third‑party scripts](../03-development-best-practices/third-party-scripts.md).
 - [ ] **API keys / webhook secrets** are stored securely (env/secret manager),
       never in the front end or version control.
 - [ ] You've completed the provider‑guided **SAQ** and have a plan to re‑attest.

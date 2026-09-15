@@ -79,6 +79,11 @@ end‑of‑life**, and plan replacements.
 > still on the server and still exploitable). A CMS is a standing commitment to
 > patching.
 
+> 💡 Package dependencies are only half the supply chain. Scripts loaded at
+> runtime from a third‑party URL aren't in your lockfile at all, and the vendor
+> can change them without a release. See
+> [third‑party scripts](../03-development-best-practices/third-party-scripts.md).
+
 ## Supply‑chain awareness
 
 Attackers sometimes compromise the dependency itself (a hijacked package, a

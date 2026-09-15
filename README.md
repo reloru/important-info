@@ -40,14 +40,14 @@ for more, and the [glossary](docs/00-getting-started/glossary.md) for terms.
 | 00 | [Getting Started](docs/00-getting-started/README.md) | How to use this repo, the website life cycle, glossary |
 | 01 | [Planning & Strategy](docs/01-planning-and-strategy/README.md) | Requirements, information architecture, choosing a stack, domains & hosting, budgeting |
 | 02 | [Design & UX](docs/02-design-and-ux/README.md) | UX principles, responsive design, design systems, content strategy |
-| 03 | [Development Best Practices](docs/03-development-best-practices/README.md) | Standards, version control, semantic HTML, testing, code review, docs |
+| 03 | [Development Best Practices](docs/03-development-best-practices/README.md) | Standards, version control, semantic HTML, forms, third‑party scripts, testing, code review, docs |
 | 04 | [Accessibility](docs/04-accessibility/README.md) | WCAG, ARIA, checklists, testing — and the law behind it |
 | 05 | [Performance](docs/05-performance/README.md) | Core Web Vitals, asset optimization, caching & CDNs, budgets |
-| 06 | [SEO](docs/06-seo/README.md) | Technical & on‑page SEO, structured data, Search Console & webmaster tools, analytics |
+| 06 | [SEO](docs/06-seo/README.md) | Technical & on‑page SEO, structured data, Search Console & webmaster tools, AI crawler controls, analytics |
 | 07 | [Security](docs/07-security/README.md) | OWASP Top 10, HTTPS/TLS, auth, secrets, headers |
 | 08 | [Deployment & DevOps](docs/08-deployment-and-devops/README.md) | CI/CD, environments, infrastructure, DNS/SSL |
 | 09 | [Maintenance & Operations](docs/09-maintenance/README.md) | Maintenance plans, dependencies, backups, monitoring, incident response |
-| 10 | [Legal & Compliance](docs/10-legal-and-compliance/README.md) | Privacy, GDPR, CCPA/CPRA, cookies, ToS, accessibility law, IP, e‑commerce, email law |
+| 10 | [Legal & Compliance](docs/10-legal-and-compliance/README.md) | Privacy, GDPR, CCPA/CPRA, cookies, retention, vendors, ToS, accessibility law, IP, e‑commerce, email law |
 | 11 | [Payments](docs/11-payments/README.md) | How online payments work, choosing a provider, PCI, Stripe (integration, webhooks, subscriptions, disputes, operations) |
 | — | [Templates & Checklists](docs/templates/README.md) | Ready‑to‑adapt policies, checklists, and plans |
 

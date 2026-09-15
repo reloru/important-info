@@ -26,6 +26,11 @@ Backups are a component; DR is the strategy.
   manager, not a plaintext file). See
   [secrets management](../07-security/secrets-management.md).
 
+> ⚖️ **Legal note:** Backups hold personal data, which makes them part of your
+> retention and deletion story — including the practical tension between a
+> deletion request and a historical backup. See
+> [data retention](../10-legal-and-compliance/data-retention.md).
+
 ## The 3‑2‑1 rule
 
 A durable, widely‑used backup strategy:

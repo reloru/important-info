@@ -50,4 +50,5 @@ throttled connection**, not your fast laptop on office wifi. See
 
 > ✅ **Do:** Set a performance budget early and measure against it continuously.
 > ❌ **Don't:** Add a huge hero video, five web fonts, and a dozen third‑party
-> scripts, then wonder why the site is slow.
+> scripts, then wonder why the site is slow. Managing that last category has its
+> own page: [third‑party scripts](../03-development-best-practices/third-party-scripts.md).
