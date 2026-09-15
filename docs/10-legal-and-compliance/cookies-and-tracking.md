@@ -116,3 +116,15 @@ one.
       [privacy policy](privacy-policy.md).
 - [ ] **Test** that nothing non‑essential fires before consent.
 - [ ] Reconsider whether you can drop trackers entirely.
+
+## Primary sources
+
+- [Directive 2002/58/EC (ePrivacy Directive), on EUR‑Lex](https://eur-lex.europa.eu/eli/dir/2002/58/oj)
+  — Article 5(3) is the "cookie law" storage‑and‑access rule.
+- [Regulation (EU) 2016/679 (GDPR)](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
+  — supplies the consent standard the ePrivacy rule relies on.
+- [European Data Protection Board](https://edpb.europa.eu/edpb_en) — guidelines on
+  consent and on dark patterns in consent interfaces.
+- [California Privacy Protection Agency](https://cppa.ca.gov/regulations/) and
+  [Global Privacy Control](https://globalprivacycontrol.org/) — the US opt‑out
+  side, including the GPC signal specification.

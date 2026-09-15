@@ -36,6 +36,11 @@ writing and correct information.
   - `> ✅ **Do:**` / `> ❌ **Don't:**`
   - `> ⚖️ **Legal note:**`
   - `> 🔒 **Security note:**` / `> ♿ **Accessibility note:**` / `> ⚡ **Performance note:**`
+  - `> 💡 **Tip:**` — a practical shortcut or rule of thumb
+  - `> ⚠️` — a common trap; use it for "this is where people get burned," not as
+    a general emphasis marker
+- Don't invent new callout emoji. If none of the above fits, the point probably
+  belongs in body prose.
 - Prefer relative links between docs so navigation works on GitHub and in
   static‑site generators.
 - Keep line‑level code snippets minimal and illustrative — this repo is about
@@ -56,6 +61,24 @@ Laws change. When you touch anything in `docs/10-legal-and-compliance/`:
 - Note the **date** of the guidance where relevant.
 - Prefer linking to primary sources (the statute, the regulator's site).
 - Do **not** turn summaries into definitive legal advice — keep the disclaimer.
+
+## Checking your change
+
+There is no build step, but there is one automated check. Run it from the repo
+root before opening a pull request:
+
+```bash
+python3 tools/check-docs.py
+```
+
+It verifies that relative links resolve, that `#anchors` match real headings,
+that no page is orphaned, that code fences are balanced, and that tables are
+well‑formed. It uses only the Python standard library — no install step. The
+same script runs in CI on every pull request (`.github/workflows/docs-check.yml`),
+so a failure there is reproducible locally with the identical command.
+
+It deliberately ignores the `[BRACKETED]` placeholders in `docs/templates/` and
+does not fetch external URLs.
 
 ## Review
 

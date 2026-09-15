@@ -89,5 +89,13 @@ users** reveals problems no checklist catches. See
 
 - The practical [accessibility checklist](accessibility-checklist.md).
 - The legal backdrop in [accessibility law](../10-legal-and-compliance/accessibility-law.md).
-- Authoritative source: the W3C Web Accessibility Initiative (WAI) and the WCAG
-  Quick Reference.
+
+## Primary sources
+
+- [WCAG 2.2 (W3C Recommendation)](https://www.w3.org/TR/WCAG22/) — the normative
+  standard: every success criterion, at every level.
+- [How to Meet WCAG (Quick Reference)](https://www.w3.org/WAI/WCAG22/quickref/) —
+  the same criteria, filterable, with techniques and failures. This is the one to
+  work from day to day.
+- [W3C WAI — WCAG standards and guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
+  — version history and what each version added.

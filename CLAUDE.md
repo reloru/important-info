@@ -35,7 +35,9 @@ life-cycle order) or as a reference (jump to a topic).
   (`dependency-management.md`).
 - **Callout vocabulary** used repo-wide (keep consistent):
   `✅ Do` / `❌ Don't`, `⚖️ Legal note`, `🔒 Security note`,
-  `♿ Accessibility note`, `⚡ Performance note`, `💡 Tip`.
+  `♿ Accessibility note`, `⚡ Performance note`, `💡 Tip`, `⚠️ Caution`.
+  `⚠️` was in use in 7 places before it was documented; it's now listed in the
+  root README and CONTRIBUTING too. Don't invent new ones.
 - Use **relative links** between docs so navigation works on GitHub and in any
   future static-site generator.
 - Page shape (pedagogical pattern to preserve): open with *why it matters* →
@@ -66,44 +68,33 @@ life-cycle order) or as a reference (jump to a topic).
   from recommended practices from context-dependent guidance. Prefer linking to
   primary sources; note dates where guidance is time-sensitive.
 
-## How to verify a change (there is no CI yet)
+## How to verify a change
 
-No test/build/lint. The one automated check that matters is the **internal link
-checker**. Run it from the repo root before committing:
+Run the committed checker from the repo root. It replaced the ad-hoc heredocs
+that used to live in this file — CI and humans now run the same code, so a CI
+failure reproduces locally with the identical command:
 
 ```bash
-python3 - <<'PY'
-import os, re
-md=[]
-for root,dirs,files in os.walk('.'):
-    if root.startswith('./.git'): continue
-    for f in files:
-        if f.endswith('.md'): md.append(os.path.join(root,f))
-lr=re.compile(r'\[[^\]]+\]\(([^)]+)\)')
-broken=[]; checked=0
-for p in md:
-    b=os.path.dirname(p)
-    for m in lr.finditer(open(p).read()):
-        t=m.group(1).strip()
-        if t.startswith(('http://','https://','mailto:','#','tel:')): continue
-        fp=t.split('#')[0]
-        if not fp or '[' in fp: continue  # skip intentional template placeholder pseudo-links
-        checked+=1
-        if not os.path.exists(os.path.normpath(os.path.join(b,fp))):
-            broken.append((p,t))
-print(f"checked {checked} links;", "ALL OK" if not broken else broken)
-PY
+python3 tools/check-docs.py
 ```
 
-Also worth re-running when relevant (scripts are ad hoc, not committed):
-- **Orphan check** — every content page should be linked from some other page
-  (root/section READMEs count). Last pass: no orphans.
+Stdlib only, no install, no network. It checks: relative links resolve,
+`#anchors` match real headings, no orphaned pages, code fences balanced, table
+row widths consistent. It skips `[BRACKETED]` template pseudo-links on purpose
+and does not fetch external URLs.
+
+`.github/workflows/docs-check.yml` runs it on every PR and on pushes to `main`
+(`actions/checkout` is the only action used).
+
+Still manual, worth doing when relevant:
 - **Reciprocal-link graph** — flag A↔B pairs and eyeball for weak see-saws.
 - **Acronym-defined-on-first-use** — high-risk acronyms (RUM, CMP, GPC, CSP,
   HSTS, RPO/RTO, IaC, SSRF, PCI DSS, E‑E‑A‑T, …) should have an expansion where
   used; the glossary backstops them.
+- **External link liveness** — the checker doesn't fetch URLs. The repo now
+  carries real citations (see below), so `curl -o /dev/null -w '%{http_code}'`
+  over the extracted URL list is worth an occasional pass.
 
-A link-check GitHub Action would be a good future addition (see backlog).
 
 ## Gotchas / do-not-break
 
@@ -154,8 +145,10 @@ A link-check GitHub Action would be a good future addition (see backlog).
 
 ## Backlog / good next steps (only if asked)
 
-- **CI:** add a GitHub Action that runs the link checker (and maybe markdownlint)
-  on PRs — the natural first automation for a docs repo.
+- ~~**CI:** add a GitHub Action that runs the link checker.~~ **Done** — see
+  `tools/check-docs.py` + `.github/workflows/docs-check.yml`. markdownlint is
+  still an option if line-length/style drift becomes a problem; it would need
+  Node, which the repo otherwise doesn't.
 - **Publish:** wire up a static-site generator (`.gitignore` already anticipates
   `_site/`, `dist/`, `node_modules/`, etc.); relative links + per-section READMEs
   are already SSG-friendly.
@@ -164,6 +157,38 @@ A link-check GitHub Action would be a good future addition (see backlog).
 - Consider a top-level `CHANGELOG.md` if the KB starts versioning.
 
 ## Log of substantive work (append newest at top)
+
+- **Repo audit + fixes (this pass).** Ran structural checks (links, anchors,
+  orphans, fences, tables, terminology, callouts, duplicate prose): **structure
+  was clean** — 828 links resolved, no orphans, no duplicates, terminology
+  consistent. The real findings were factual staleness and a **citation gap**.
+  - **Three verified accuracy fixes**, each checked against the primary source in
+    Sept 2026: (1) PCI page said "v4.0 is the current major version" — it's
+    **v4.0.1**, and the **Jan-2025 SAQ A** (effective 31 Mar 2025) moved
+    **6.4.3/11.6.1 out of the questionnaire and added a script-security
+    *eligibility* criterion** — so page-integrity work is now part of qualifying
+    for SAQ A, not optional polish; (2) CCPA revenue threshold is
+    **$26,625,000** (eff. 1 Jan 2025, CPI-adjusted in odd years), plus a new
+    section on the **2026 regs** (risk assessments from 1 Jan 2026, attestation
+    by 1 Apr 2028; cyber audits 1 Apr 2028/2029/2030 by revenue; **ADMT**
+    1 Jan 2027); (3) ADA **Title II** is a **final rule** (24 Apr 2024, WCAG 2.1
+    AA) whose compliance dates were **extended** by an interim final rule
+    effective 20 Apr 2026 to **26 Apr 2027 / 26 Apr 2028**.
+  - **Citation gap closed on the high-stakes pages.** CONTRIBUTING principle 3
+    requires authoritative sources for legal/security/standards claims, but the
+    whole KB had only **3 external links**. Added verified **Primary sources**
+    blocks (every URL curl-checked) to gdpr, ccpa-cpra, cookies-and-tracking,
+    email-marketing-law, dmca, accessibility-law, wcag-overview, owasp-top-10,
+    pci-compliance, core-web-vitals. wcag-overview and owasp-top-10 had *named*
+    their authoritative source without linking it — fixed. **Pattern to follow:
+    date-stamp the verification ("last verified September 2026") on any page
+    carrying figures that move.**
+  - **Automation:** `tools/check-docs.py` (stdlib only) now carries the link
+    check *plus* anchor, orphan, fence, and table checks, and CI runs it. The
+    heredoc in this file is gone — same code for CI and humans.
+  - Also: documented `⚠️` as a real callout; wired forms-and-input-handling into
+    the security README (it was only reachable from the dev section); expanded
+    CSRF/SSRF on first use in two pages.
 
 - **Pre-publish gap audit + SEO checklist + forms page.** Audited the KB for
   critical holes before wiring up an SSG. Finding: **no critical omission** — the

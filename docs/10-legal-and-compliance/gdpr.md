@@ -133,3 +133,17 @@ deleting a person's data (mind your [backups](../09-maintenance/backups-and-disa
 
 GDPR rewards the habits this whole knowledge base encourages: collect less,
 secure it, be transparent, and be ready to act on requests and incidents.
+
+## Primary sources
+
+- [Regulation (EU) 2016/679 (GDPR), full text on EUR‑Lex](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
+  — the regulation itself; Article 5 (principles), Article 6 (lawful bases),
+  Articles 12–23 (rights), Articles 33–34 (breach notification).
+- [European Data Protection Board](https://edpb.europa.eu/edpb_en) — guidelines
+  and consistency opinions from the EU regulators collectively.
+- [UK Information Commissioner's Office — UK GDPR guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/)
+  — the most readable regulator guidance in English, and authoritative for the UK.
+
+*Where this page states a hard figure — €20 million / 4%, one month, 72 hours —
+it reflects the regulation text linked above. Regulator guidance on how those
+apply does move; check the EDPB or your own supervisory authority.*

@@ -31,6 +31,11 @@ credentials, and predictable mistakes.**
 - **[Security headers](security-headers.md)** — browser‑level protections you
   get almost for free.
 
+Forms are where most user input enters your site, so the practical companion to
+this section lives in the development chapter:
+**[forms & input handling](../03-development-best-practices/forms-and-input-handling.md)**
+— server‑side validation, spam and abuse controls, file uploads, and rate limiting.
+
 ## The highest‑value basics
 
 If you do nothing else, do these:
@@ -41,7 +46,8 @@ If you do nothing else, do these:
    [dependency management](../09-maintenance/dependency-management.md).
 3. **Use strong, unique credentials + MFA** on every account.
 4. **Validate and sanitize all input**; use parameterized queries. See
-   [OWASP Top 10](owasp-top-10.md).
+   [OWASP Top 10](owasp-top-10.md) and
+   [forms & input handling](../03-development-best-practices/forms-and-input-handling.md).
 5. **Never commit secrets.** See [secrets management](secrets-management.md).
 6. **Back up** — and test restores — so you can recover. See
    [backups](../09-maintenance/backups-and-disaster-recovery.md).

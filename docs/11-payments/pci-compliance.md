@@ -10,7 +10,8 @@ explains what PCI DSS is, the scope levels, and how to stay in the easiest one.
 > enforced by the card networks (via your acquirer/PSP), not a law — but
 > non‑compliance can mean fines, higher fees, or losing the ability to accept
 > cards, and a card‑data breach is catastrophic. Confirm your obligations with
-> your provider; requirements evolve (PCI DSS v4.0 is the current major version).
+> your provider; requirements evolve (**PCI DSS v4.0.1** is the current version,
+> and v4.x's future‑dated requirements became mandatory on **31 March 2025**).
 
 ## What PCI DSS is
 
@@ -56,6 +57,29 @@ common web ones.)*
 
 **The goal for most web businesses: qualify for SAQ A** by fully outsourcing card
 capture.
+
+### SAQ A now has a script‑security eligibility criterion
+
+This is the part most "just use hosted fields" advice is out of date on. The SAQ A
+published in **January 2025** (effective **31 March 2025**) changed what it takes
+to *qualify*, not just what you attest to:
+
+- PCI DSS Requirements **6.4.3** (managing payment‑page scripts) and **11.6.1**
+  (detecting unauthorized changes to the payment page) were **removed from the
+  SAQ A questionnaire itself**, along with Requirement 12.3.1's targeted risk
+  analysis supporting 11.6.1.
+- In their place, SAQ A added an **eligibility criterion**: the merchant confirms
+  their site **is not susceptible to attacks from scripts** that could affect the
+  e‑commerce system. The PCI SSC points to the techniques in 6.4.3 and 11.6.1 as
+  the way to establish that — implemented by you *or* by a third party.
+- Removing them from the SAQ **does not remove them from PCI DSS.** The underlying
+  requirements still stand; SAQ A only changes how you report.
+
+> 🔒 Practical effect: the page‑integrity work described under
+> [remaining responsibilities](#beyond-card-capture-your-remaining-responsibilities)
+> is no longer optional polish on top of SAQ A — it is part of the case that you
+> belong in SAQ A at all. Script inventory, integrity checking, and a tight
+> [Content Security Policy](../07-security/security-headers.md) are the evidence.
 
 ## How Stripe keeps you in SAQ A
 
@@ -106,7 +130,10 @@ security entirely:
 - [ ] You **never store** PANs or CVVs yourself; you store **tokens/IDs**.
 - [ ] Checkout and the whole site are **HTTPS‑only** with valid certs.
 - [ ] A **Content Security Policy** and patched dependencies protect page
-      integrity against injected scripts.
+      integrity against injected scripts — and you can **show** it, since this is
+      now an SAQ A **eligibility** question, not just good practice.
+- [ ] You have an **inventory of scripts** on the payment page and a way to detect
+      unauthorized changes to them (PCI DSS 6.4.3 / 11.6.1).
 - [ ] **API keys / webhook secrets** are stored securely (env/secret manager),
       never in the front end or version control.
 - [ ] You've completed the provider‑guided **SAQ** and have a plan to re‑attest.
@@ -116,3 +143,16 @@ security entirely:
 Get PCI scope right once — by never touching raw card data — and it mostly takes
 care of itself. Then move on to actually integrating Stripe:
 [Stripe overview](stripe-overview.md).
+
+## Primary sources
+
+- [PCI SSC Document Library](https://www.pcisecuritystandards.org/document_library/)
+  — the standard, the SAQs, and the attestation forms themselves.
+- [Important Updates for Merchants Validating to SAQ A](https://blog.pcisecuritystandards.org/important-updates-announced-for-merchants-validating-to-self-assessment-questionnaire-a)
+  — PCI SSC's own announcement of the January 2025 SAQ A changes described above.
+- [Stripe: security & PCI guide](https://docs.stripe.com/security/guide) —
+  provider‑specific guidance on which integrations map to which SAQ.
+
+*Version/date‑sensitive material on this page was last verified against those
+sources in **September 2026**. PCI DSS versions and SAQ eligibility change; check
+the document library before relying on a date here.*

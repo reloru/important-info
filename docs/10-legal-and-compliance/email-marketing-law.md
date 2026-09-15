@@ -107,3 +107,15 @@ Newsletter sign‑ups are a data‑collection point, so they intersect with:
 - [ ] Domain email **authentication** (SPF/DKIM/DMARC) is configured.
 - [ ] List is **self‑collected**, never bought or scraped.
 - [ ] Jurisdictional differences (CAN‑SPAM vs. GDPR vs. CASL) accounted for.
+
+## Primary sources
+
+- [FTC — CAN‑SPAM Act compliance guide for business](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)
+  — the regulator's own rundown of the US rules, including the 10‑business‑day
+  opt‑out window and current penalty figures.
+- [Government of Canada — Canada's Anti‑Spam Legislation](https://ised-isde.canada.ca/site/canada-anti-spam-legislation/en)
+  — CASL's consent, identification, and unsubscribe requirements.
+- [Directive 2002/58/EC (ePrivacy)](https://eur-lex.europa.eu/eli/dir/2002/58/oj)
+  — Article 13 covers unsolicited communications and the soft opt‑in.
+- [UK Information Commissioner's Office](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/)
+  — practical guidance on direct marketing consent.
