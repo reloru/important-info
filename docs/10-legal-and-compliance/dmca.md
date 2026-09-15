@@ -103,3 +103,9 @@ regimes that apply to your users, not just the US one.
 - **Someone copied you?** The takedown process is your fast, low‑cost remedy.
 - **Received a notice?** Respond promptly and honestly; get advice before a
   counter‑notice.
+
+## Primary sources
+
+- [US Copyright Office — DMCA](https://www.copyright.gov/dmca/) — the statute,
+  the safe‑harbour conditions, and the designated‑agent registry (registration is
+  a precondition for the § 512 safe harbour, not an optional extra).

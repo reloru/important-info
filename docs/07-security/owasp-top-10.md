@@ -101,3 +101,11 @@ internal systems).
 The OWASP Top 10 is revised periodically and there are focused lists for APIs,
 mobile, and more. Treat the official OWASP site as the source of truth, and
 revisit it — the threat landscape shifts.
+
+## Primary sources
+
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/) — the current list, the
+  data behind it, and the per‑category detail pages.
+- [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/) — concrete
+  defensive guidance per topic (input validation, authentication, CSRF, uploads).
+  This is the practical companion to the list above.

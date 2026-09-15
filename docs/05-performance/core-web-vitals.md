@@ -78,3 +78,10 @@ what's really happening.
 > genuinely better experience. Optimizing them helps users, SEO, and conversions
 > together. Set them as targets in your
 > [performance budget](performance-budgets.md).
+
+## Primary sources
+
+- [web.dev — Web Vitals](https://web.dev/articles/vitals) — Google's own
+  definitions, current thresholds, and the changelog of which metrics are in the
+  set. Thresholds and metric membership have changed before (INP replaced FID in
+  March 2024); check here before quoting a number.

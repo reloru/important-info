@@ -86,6 +86,8 @@ they thread through every phase. This knowledge base flags where.
 ├── README.md                     ← you are here (master index)
 ├── CONTRIBUTING.md               ← how to add or update content
 ├── LICENSE                       ← content license (CC BY 4.0)
+├── tools/check-docs.py           ← link/anchor/orphan checker (stdlib only)
+├── .github/workflows/            ← CI: runs the checker on every PR
 ├── docs/
 │   ├── 00-getting-started/
 │   ├── 01-planning-and-strategy/
@@ -110,6 +112,8 @@ they thread through every phase. This knowledge base flags where.
 - **⚖️ Legal note** — where a practice intersects with the law.
 - **🔒 Security note** / **♿ Accessibility note** / **⚡ Performance note** —
   cross‑cutting callouts.
+- **💡 Tip** — a practical shortcut or rule of thumb.
+- **⚠️ Caution** — a common trap that bites people in practice.
 - **Checklists** are written so you can copy them into an issue or ticket.
 
 Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).

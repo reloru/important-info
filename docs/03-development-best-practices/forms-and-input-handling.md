@@ -38,8 +38,10 @@ of vulnerability (see [OWASP Top 10](../07-security/owasp-top-10.md)):
 > - **Encode/escape output** by context when displaying user input (prevents
 >   cross‑site scripting, XSS) — especially critical for anything that echoes a
 >   submission back, or stores it for later display.
-> - **Protect state‑changing forms with CSRF tokens** and appropriate
->   `SameSite` cookies. See [security headers](../07-security/security-headers.md).
+> - **Protect state‑changing forms with CSRF tokens** (cross‑site request
+>   forgery — a page an attacker controls making your logged‑in user submit your
+>   form) and appropriate `SameSite` cookies. See
+>   [security headers](../07-security/security-headers.md).
 
 > ❌ **Don't:** Build queries by concatenating input, render user input as raw
 > HTML, or assume "it's just a contact form, what could go wrong?" Contact forms
@@ -84,8 +86,9 @@ If a form accepts files, it's a high‑risk feature:
 >   content, and **never execute** uploaded files.
 > - **Store uploads outside the web root** (or in object storage) and serve them
 >   safely; consider **malware scanning**.
-> - Watch for **SSRF/parsing** issues in anything that processes uploads (image
->   libraries, PDF parsers). See [OWASP Top 10](../07-security/owasp-top-10.md).
+> - Watch for **server‑side request forgery (SSRF)** and parsing issues in
+>   anything that processes uploads (image libraries, PDF parsers). See
+>   [OWASP Top 10](../07-security/owasp-top-10.md).
 
 ## Where submissions go
 

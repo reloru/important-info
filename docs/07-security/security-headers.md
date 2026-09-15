@@ -62,8 +62,8 @@ Not headers per se, but set on cookies and just as important:
 - **`Secure`** — only sent over HTTPS.
 - **`HttpOnly`** — not readable by JavaScript (limits XSS damage to session
   cookies).
-- **`SameSite`** — restricts cross‑site sending (helps prevent **CSRF**). Use
-  `Lax` or `Strict` for session cookies.
+- **`SameSite`** — restricts cross‑site sending (helps prevent **cross‑site
+  request forgery, CSRF**). Use `Lax` or `Strict` for session cookies.
 
 See [authentication](authentication-and-authorization.md) for session handling.
 
