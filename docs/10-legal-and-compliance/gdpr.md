@@ -43,7 +43,8 @@ You must process personal data:
 2. For **specified, legitimate purposes** (purpose limitation).
 3. **Minimally** — only what you need (data minimization).
 4. **Accurately** — keep it correct and up to date.
-5. With **storage limitation** — not longer than necessary.
+5. With **storage limitation** — not longer than necessary. See
+   [data retention](data-retention.md).
 6. With **integrity and confidentiality** — i.e., securely. See
    [Security](../07-security/README.md).
 
@@ -105,7 +106,8 @@ deleting a person's data (mind your [backups](../09-maintenance/backups-and-disa
 
 - **Records of processing** — many organizations must maintain them.
 - **DPAs with processors** — contracts with vendors that handle personal data on
-  your behalf.
+  your behalf, including rules on the **subprocessors** they engage. See
+  [vendors & subprocessors](vendors-and-subprocessors.md).
 - **International transfers** — sending EU personal data outside the EEA requires
   a valid transfer mechanism (adequacy decision, Standard Contractual Clauses,
   etc.). This has affected use of some US‑based services; check your vendors and

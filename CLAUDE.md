@@ -158,6 +158,38 @@ Still manual, worth doing when relevant:
 
 ## Log of substantive work (append newest at top)
 
+- **Content-gap pass on the non-legal sections.** The prior audit checked
+  structure everywhere but read content closely only in legal/a11y/PCI/CWV. This
+  pass read the rest. Method worth reusing: **grep the KB for topics a
+  practitioner would expect**, then verify each apparent miss against the page
+  that should own it — most "gaps" are wording mismatches. Also ran a **new
+  check: glossary terms with no body-page coverage** (169 terms → 20 candidates
+  → 2 real). Confirmed *not* gaps: redirects/migrations (technical-seo has a
+  section), supply chain (dependency-management), AI-*generated* content
+  (copyright-and-ip), monitoring/error tracking, Open Graph, CMS choice.
+  - **Four new pages**, all cross-linked and in their section READMEs:
+    `03/third-party-scripts.md` (the connective page between security,
+    performance, privacy and PCI — inventory, SRI, CSP, consent gating,
+    self-hosting; also gives the glossary's orphaned "third-party script" and
+    "supply-chain attack" entries a home), `06/ai-crawlers-and-content-controls.md`,
+    `10/data-retention.md`, `10/vendors-and-subprocessors.md`.
+  - **Three in-place additions:** CORS + an SRI pointer in `security-headers.md`
+    (CORS was absent from the page that should own it — note the framing that
+    earned its place: it's the one security header that *grants* rather than
+    restricts); **passkeys/WebAuthn** in `authentication-and-authorization.md`.
+  - **Verified, don't re-derive:** WebAuthn L3 is a **W3C Recommendation
+    (25 Aug 2026)**; robots.txt is **RFC 9309**; OpenAI tokens are GPTBot /
+    OAI-SearchBot / ChatGPT-User / OAI-AdsBot; Anthropic's are ClaudeBot /
+    Claude-SearchBot / Claude-User; **`Google-Extended` is NOT a crawler** (no
+    separate UA string, control token only, no Search impact) — this is the fact
+    most third-party articles get wrong. **`llms.txt` is a community convention,
+    NOT a standard** — a marketing blog claimed a June 2026 W3C working draft
+    standardizing it; **that draft does not exist in W3C's own listings and the
+    claim was not repeated.** Real standards work is IETF **aipref**
+    (`draft-ietf-aipref-vocab`, `draft-ietf-aipref-attach`, neither yet an RFC).
+  - **Still open as feature-section candidates** (unchanged): full
+    i18n/localization, transactional email/deliverability, on-site search.
+
 - **Repo audit + fixes (this pass).** Ran structural checks (links, anchors,
   orphans, fences, tables, terminology, callouts, duplicate prose): **structure
   was clean** — 828 links resolved, no orphans, no duplicates, terminology

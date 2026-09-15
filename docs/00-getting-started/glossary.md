@@ -400,6 +400,39 @@ Terms are grouped by area. Use your browser's find (Ctrl/Cmd‑F) to jump to one
 - **CSRF (Cross‑Site Request Forgery)** — Tricking a logged‑in user's browser into
   making an unwanted request. *Why it matters:* it's defended with anti‑CSRF tokens
   and `SameSite` cookies.
+- **CORS (Cross‑Origin Resource Sharing)** — HTTP headers by which a server tells
+  the browser which *other* origins may read its responses, relaxing the default
+  same‑origin policy. *Why it matters:* it's the one security header that **grants**
+  access rather than restricting it, so misconfiguring it (a wildcard with
+  credentials, or blindly reflecting the `Origin` header) opens your API to every
+  site on the internet. It also protects browsers only — it is not server‑side
+  access control. See [security headers](../07-security/security-headers.md).
+- **Preflight request** — An automatic `OPTIONS` request a browser sends before a
+  non‑simple cross‑origin request, asking the server whether the real request is
+  allowed. *Why it matters:* a missing or wrong preflight response is the usual
+  cause of a cross‑origin call that works in one tool and fails in the browser.
+- **SRI (Subresource Integrity)** — An `integrity` attribute holding a
+  cryptographic hash of a script or stylesheet, which the browser verifies before
+  running it. *Why it matters:* it's the defence against a third‑party file being
+  altered after you linked to it; on a mismatch the browser refuses to load the
+  resource. Requires the `crossorigin` attribute for cross‑origin files. See
+  [third‑party scripts](../03-development-best-practices/third-party-scripts.md).
+- **Passkey** — A public‑key credential stored on a user's device or password
+  manager and used via **WebAuthn** instead of a password. *Why it matters:* there
+  is no shared secret to steal, and because the credential is scoped to your
+  origin it is **phishing‑resistant by construction** — a property passwords and
+  one‑time codes cannot offer. See
+  [authentication & authorization](../07-security/authentication-and-authorization.md).
+- **WebAuthn (Web Authentication API)** — The W3C standard browser API for
+  creating and using public‑key credentials, the mechanism behind passkeys. *Why
+  it matters:* it's the specification your library or identity provider
+  implements, and the vocabulary ("discoverable credential", "relying party") you
+  will meet in their documentation.
+- **Magecart** — The class of attack in which a compromised third‑party script
+  skims card or credential data from a page. *Why it matters:* the victim site
+  isn't breached itself — it merely linked to something that later turned
+  hostile, which is why script inventory and integrity checking matter on payment
+  and login pages. See [PCI compliance](../11-payments/pci-compliance.md).
 - **Rate limiting** — Capping how many requests/actions a client can make in a
   time window. *Why it matters:* it blunts brute‑force logins, form spam, API
   abuse, and payment card‑testing — a cheap, high‑value control that's easy to
@@ -645,6 +678,31 @@ Terms are grouped by area. Use your browser's find (Ctrl/Cmd‑F) to jump to one
   (US, based on sales thresholds per state) or **VAT** (EU, often by the customer's
   country) on online sales. *Why it matters:* getting tax wrong creates real
   liability; use tax tooling and professional advice.
+
+- **Data retention** — The period you keep personal data before deleting or
+  anonymising it. *Why it matters:* GDPR's **storage limitation** principle sets
+  no numbers but requires you to justify the period you chose, and data you no
+  longer need is pure liability. See [data retention](../10-legal-and-compliance/data-retention.md).
+- **Subprocessor** — A processor engaged by *your* processor — your email
+  platform's cloud host, your helpdesk's transcription service. *Why it matters:*
+  your data reaches them but your contract doesn't, so this chain is where most
+  site owners' unexamined exposure sits; processors must get your authorisation
+  before engaging one and must tell you about changes. See
+  [vendors & subprocessors](../10-legal-and-compliance/vendors-and-subprocessors.md).
+- **DPA (Data Processing Agreement)** — The written contract required between a
+  controller and a processor handling personal data on their behalf. *Why it
+  matters:* GDPR Article 28 specifies what it must cover, and for many platforms
+  accepting it is a **separate step** people skip.
+- **AI crawler** — An automated agent that reads web content for model training,
+  for AI search, or on a user's behalf. *Why it matters:* these are distinct
+  purposes with distinct user‑agent tokens, so "block AI" is rarely the right
+  instruction — most sites want to decline training while staying citable. See
+  [AI crawlers & content controls](../06-seo/ai-crawlers-and-content-controls.md).
+- **llms.txt** — A proposed Markdown file at a site's root pointing AI assistants
+  at clean versions of key pages. *Why it matters:* it is a **community
+  convention, not an adopted standard**, with inconsistent vendor support and no
+  ability to express restrictions — useful for developer documentation, not a
+  permission mechanism.
 
 ## Payments
 

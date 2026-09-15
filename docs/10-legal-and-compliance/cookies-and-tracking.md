@@ -117,6 +117,10 @@ one.
 - [ ] **Test** that nothing non‑essential fires before consent.
 - [ ] Reconsider whether you can drop trackers entirely.
 
+> 💡 The engineering side of this — inventorying vendor scripts, gating them on
+> consent, and verifying nothing fires before the user answers — is in
+> [third‑party scripts](../03-development-best-practices/third-party-scripts.md).
+
 ## Primary sources
 
 - [Directive 2002/58/EC (ePrivacy Directive), on EUR‑Lex](https://eur-lex.europa.eu/eli/dir/2002/58/oj)
